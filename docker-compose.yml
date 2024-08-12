@@ -4,12 +4,12 @@ services:
   app:
     build: .
     container_name: ${PROJECT_NAME}
-    ports:
-      - '8550:8550'
     volumes:
       - ./src:/app
     environment:
       - FLET_SERVER_PORT=8550
+    ports:
+      - 15${PROJECT_ID}:8550 #port for jdeapp
 
 networks:
   default:

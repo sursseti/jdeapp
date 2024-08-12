@@ -1,12 +1,13 @@
 .PHONY: build run test clean
 
 # Переменные
+PROJECT_ID = 123
 PROJECT_NAME = jde_app
 DOCKER_COMPOSE = docker-compose -p $(PROJECT_NAME)
 DOCKER_COMPOSE_FILE = docker-compose.yml
 
 # Экспорт переменных для использования в docker-compose
-export PROJECT_NAME SERVICE_NAME
+export PROJECT_NAME SERVICE_NAME PROJECT_ID
 
 # Сборка Docker образа
 build:
@@ -17,7 +18,7 @@ run:
 	$(DOCKER_COMPOSE) -f $(DOCKER_COMPOSE_FILE) up
 
 # Инициализация: сборка и запуск приложения
-init: build run
+init: build run-detached
 
 # Запуск приложения в фоновом режиме
 run-detached:
