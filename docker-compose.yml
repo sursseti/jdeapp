@@ -1,0 +1,16 @@
+version: '0.1.1'
+
+services:
+  app:
+    build: .
+    container_name: ${PROJECT_NAME}
+    ports:
+      - '8550:8550'
+    volumes:
+      - ./src:/app
+    environment:
+      - FLET_SERVER_PORT=8550
+
+networks:
+  default:
+    name: ${PROJECT_NAME}_network
