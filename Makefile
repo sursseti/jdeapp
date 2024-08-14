@@ -2,7 +2,7 @@
 
 # Переменные
 PROJECT_ID = 123
-PROJECT_NAME = jde_app
+PROJECT_NAME = jde
 DOCKER_COMPOSE = docker-compose -p $(PROJECT_NAME)
 DOCKER_COMPOSE_FILE = docker-compose.yml
 
